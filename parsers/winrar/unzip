@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -eu
+
+wine 'C:\Program Files\WinRAR\WinRAR.exe' x -ibck -y -ppassword "Z:${1//\//\\}" '*.*' "Z:${2//\//\\}"

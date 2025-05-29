@@ -1,0 +1,6 @@
+#!/bin/sh
+
+set -eu
+
+bsdunzip -t "$1"
+bsdunzip -o -d "$2" "$1"

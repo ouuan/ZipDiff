@@ -1,0 +1,430 @@
+{
+  "7zip": {
+    "name": "7-Zip",
+    "version": "24.08",
+    "update": "https://packages.debian.org/bookworm-backports/7zip",
+    "type": "app",
+    "language": "C++",
+    "github": "ip7z/7zip"
+  },
+  "ada-zip-ada": {
+    "name": "Zip-Ada",
+    "version": "59",
+    "update": "https://github.com/zertovitch/zip-ada/blob/master/doc/za_history.txt",
+    "type": "lib",
+    "language": "Ada",
+    "github": "zertovitch/zip-ada"
+  },
+  "android-libziparchive": {
+    "name": "Android libziparchive",
+    "version": "34.0.5",
+    "update": "https://packages.debian.org/bookworm-backports/android-libziparchive-dev",
+    "type": "lib",
+    "language": "C++",
+    "link": "https://cs.android.com/android/platform/superproject/main/+/main:system/libziparchive/"
+  },
+  "cpp-poco": {
+    "name": "POCO",
+    "version": "1.13.3",
+    "update": "https://github.com/pocoproject/poco/releases",
+    "type": "lib",
+    "language": "C++",
+    "github": "pocoproject/poco"
+  },
+  "csharp-dotnetzip": {
+    "name": "DotNetZip",
+    "version": "1.16.0",
+    "update": "https://www.nuget.org/packages/DotNetZip/",
+    "type": "lib",
+    "language": "C#",
+    "github": "haf/DotNetZip.Semverd",
+    "download": "11.7k"
+  },
+  "csharp-io-compression": {
+    "name": "System.IO.Compression",
+    "version": "9.0.0",
+    "update": "https://github.com/dotnet/core/releases",
+    "type": "lib",
+    "language": "C#",
+    "std": true,
+    "link": "https://learn.microsoft.com/en-us/dotnet/api/system.io.compression"
+  },
+  "csharp-sharpcompress": {
+    "name": "SharpCompress",
+    "version": "0.38.0",
+    "update": "https://www.nuget.org/packages/sharpcompress/",
+    "type": "lib",
+    "language": "C#",
+    "github": "adamhathcock/sharpcompress",
+    "download": "39.4k"
+  },
+  "csharp-sharpziplib": {
+    "name": "SharpZipLib",
+    "version": "1.4.2",
+    "update": "https://www.nuget.org/packages/SharpZipLib/",
+    "type": "lib",
+    "language": "C#",
+    "github": "icsharpcode/SharpZipLib",
+    "download": "45.4k"
+  },
+  "c-zip": {
+    "name": "zip",
+    "version": "0.3.2",
+    "update": "https://github.com/kuba--/zip/releases",
+    "type": "lib",
+    "language": "C",
+    "github": "kuba--/zip"
+  },
+  "dart-archive": {
+    "name": "archive",
+    "version": "3.6.1",
+    "update": "https://pub.dev/packages/archive",
+    "type": "lib",
+    "language": "Dart",
+    "github": "brendan-duncan/archive"
+  },
+  "d-std-zip": {
+    "name": "std.zip",
+    "version": "2.109.1",
+    "update": "https://pkgs.alpinelinux.org/package/edge/community/x86_64/dmd",
+    "type": "lib",
+    "language": "D",
+    "std": true,
+    "link": "https://dlang.org/library/std/zip.html"
+  },
+  "erlang-zip": {
+    "name": "zip",
+    "version": "27.1.2.0",
+    "update": "https://hub.docker.com/_/erlang",
+    "type": "lib",
+    "language": "Erlang",
+    "std": true,
+    "link": "https://www.erlang.org/doc/apps/stdlib/zip.html"
+  },
+  "go-islazy-zip": {
+    "name": "archive/zip",
+    "version": "1.22.3",
+    "update": "fixed due to CVE-2024-24789",
+    "type": "lib",
+    "language": "Go",
+    "std": true,
+    "link": "https://pkg.go.dev/archive/zip"
+  },
+  "go-unarr": {
+    "name": "go-unarr",
+    "version": "0.2.4",
+    "update": "https://github.com/gen2brain/go-unarr/releases/",
+    "type": "lib",
+    "language": "C",
+    "github": "gen2brain/go-unarr"
+  },
+  "haskell-zip": {
+    "name": "zip",
+    "version": "2.1.0",
+    "update": "https://hackage.haskell.org/package/zip",
+    "type": "lib",
+    "language": "Haskell",
+    "github": "mrkkrp/zip",
+    "download": "7"
+  },
+  "haskell-zip-archive": {
+    "name": "zip-archive",
+    "version": "0.4.3.2",
+    "update": "https://hackage.haskell.org/package/zip-archive",
+    "type": "lib",
+    "language": "Haskell",
+    "github": "jgm/zip-archive",
+    "download": "22"
+  },
+  "infozip": {
+    "name": "Info-ZIP",
+    "version": "6.0",
+    "update": "dead for years",
+    "type": "app",
+    "language": "C",
+    "link": "https://infozip.sourceforge.net/"
+  },
+  "java-commons-compress-stream": {
+    "name": "Commons Compress (stream)",
+    "version": "1.27.1",
+    "update": "https://mvnrepository.com/artifact/org.apache.commons/commons-compress",
+    "type": "lib",
+    "language": "Java",
+    "github": "apache/commons-compress"
+  },
+  "java-plexus-archiver": {
+    "name": "Commons Compress (ZipFile)",
+    "version": "1.27.1",
+    "update": "https://mvnrepository.com/artifact/org.apache.commons/commons-compress",
+    "type": "lib",
+    "language": "Java",
+    "github": "apache/commons-compress"
+  },
+  "java-zip4j": {
+    "name": "zip4j (ZipFile)",
+    "version": "2.11.5",
+    "update": "https://mvnrepository.com/artifact/net.lingala.zip4j/zip4j",
+    "type": "lib",
+    "language": "Java",
+    "github": "srikanth-lingala/zip4j"
+  },
+  "java-zip4j-stream": {
+    "name": "zip4j (ZipInputStream)",
+    "version": "2.11.5",
+    "update": "https://mvnrepository.com/artifact/net.lingala.zip4j/zip4j",
+    "type": "lib",
+    "language": "Java",
+    "github": "srikanth-lingala/zip4j"
+  },
+  "java-zt-zip": {
+    "name": "java.util.zip.ZipFile",
+    "version": "21.0.5",
+    "update": "https://hub.docker.com/_/eclipse-temurin/tags?name=jre-alpine",
+    "type": "lib",
+    "language": "Java",
+    "std": true,
+    "link": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/zip/ZipFile.html"
+  },
+  "java-zt-zip-stream": {
+    "name": "java.util.zip.ZipInputStream",
+    "version": "21.0.5",
+    "update": "https://hub.docker.com/_/eclipse-temurin/tags?name=jre-alpine",
+    "type": "lib",
+    "language": "Java",
+    "std": true,
+    "link": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/zip/ZipInputStream.html"
+  },
+  "libarchive-bsdunzip": {
+    "name": "libarchive",
+    "version": "3.7.7",
+    "update": "https://github.com/libarchive/libarchive/releases",
+    "type": "lib",
+    "language": "C",
+    "github": "libarchive/libarchive"
+  },
+  "minizip": {
+    "name": "minizip",
+    "version": "1.3.1",
+    "update": "https://github.com/madler/zlib/releases/",
+    "type": "lib",
+    "language": "C",
+    "github": "madler/zlib"
+  },
+  "minizip-ng": {
+    "name": "minizip-ng",
+    "version": "4.0.8",
+    "update": "https://github.com/zlib-ng/minizip-ng/releases",
+    "type": "lib",
+    "language": "C",
+    "github": "zlib-ng/minizip-ng"
+  },
+  "nodejs-adm-zip": {
+    "name": "adm-zip",
+    "version": "0.5.16",
+    "update": "https://www.npmjs.com/package/adm-zip",
+    "type": "lib",
+    "language": "JavaScript",
+    "github": "cthackers/adm-zip",
+    "download": "826k"
+  },
+  "nodejs-decompress-zip": {
+    "name": "decompress-zip",
+    "version": "0.3.3",
+    "update": "https://www.npmjs.com/package/decompress-zip",
+    "type": "lib",
+    "language": "JavaScript",
+    "github": "bower/decompress-zip",
+    "download": "14k"
+  },
+  "nodejs-extract-zip": {
+    "name": "yauzl",
+    "version": "2.10.0",
+    "update": "https://www.npmjs.com/package/extract-zip",
+    "type": "lib",
+    "language": "JavaScript",
+    "github": "thejoshwolfe/yauzl",
+    "download": "2.3m (v2)"
+  },
+  "nodejs-extract-zip-yauzl-3": {
+    "name": "yauzl",
+    "version": "3.2.0",
+    "update": "https://www.npmjs.com/package/yauzl",
+    "type": "lib",
+    "language": "JavaScript",
+    "github": "thejoshwolfe/yauzl",
+    "download": "119k (v3)"
+  },
+  "nodejs-jszip": {
+    "name": "jszip",
+    "version": "3.10.1",
+    "update": "https://www.npmjs.com/package/jszip",
+    "type": "lib",
+    "language": "JavaScript",
+    "github": "Stuk/jszip",
+    "download": "1.3m"
+  },
+  "nodejs-node-stream-zip": {
+    "name": "node-stream-zip",
+    "version": "1.15.0",
+    "update": "https://www.npmjs.com/package/node-stream-zip",
+    "type": "lib",
+    "language": "JavaScript",
+    "github": "antelle/node-stream-zip",
+    "download": "324k"
+  },
+  "nodejs-ronomon-zip": {
+    "name": "@ronomon/zip",
+    "version": "1.12.0",
+    "update": "https://www.npmjs.com/package/@ronomon/zip",
+    "type": "lib",
+    "language": "JavaScript",
+    "github": "ronomon/zip"
+  },
+  "nodejs-unzipper": {
+    "name": "unzipper (Open)",
+    "version": "0.12.3",
+    "update": "https://www.npmjs.com/package/unzipper",
+    "type": "lib",
+    "language": "JavaScript",
+    "github": "ZJONSSON/node-unzipper",
+    "download": "461k"
+  },
+  "nodejs-unzipper-stream": {
+    "name": "unzipper (Extract)",
+    "version": "0.12.3",
+    "update": "https://www.npmjs.com/package/unzipper",
+    "type": "lib",
+    "language": "JavaScript",
+    "github": "ZJONSSON/node-unzipper",
+    "download": "461k"
+  },
+  "nodejs-zipjs": {
+    "name": "zip.js",
+    "version": "2.7.53",
+    "update": "https://www.npmjs.com/package/@zip.js/zip.js",
+    "type": "lib",
+    "language": "JavaScript",
+    "github": "gildas-lormeau/zip.js",
+    "download": "118k"
+  },
+  "p7zip": {
+    "name": "p7zip",
+    "version": "16.02",
+    "update": "https://packages.debian.org/bookworm/p7zip-full",
+    "type": "app",
+    "language": "C++",
+    "link": "https://p7zip.sourceforge.net/"
+  },
+  "pascal-paszlib": {
+    "name": "paszlib",
+    "version": "3.2.2",
+    "update": "https://hub.docker.com/r/freepascal/fpc",
+    "type": "lib",
+    "language": "Pascal",
+    "std": true,
+    "link": "https://wiki.freepascal.org/paszlib"
+  },
+  "perl-archive-zip": {
+    "name": "Archive::Zip",
+    "version": "1.68",
+    "update": "https://metacpan.org/pod/Archive::Zip",
+    "type": "lib",
+    "language": "Perl",
+    "github": "redhotpenguin/perl-Archive-Zip"
+  },
+  "php-phardata": {
+    "name": "PharData",
+    "version": "8.3.13",
+    "update": "https://pkgs.alpinelinux.org/packages?name=php8%3F&branch=edge&arch=x86_64",
+    "type": "lib",
+    "language": "PHP",
+    "std": true,
+    "link": "https://www.php.net/manual/en/class.phardata.php"
+  },
+  "php-phpzip": {
+    "name": "phpzip",
+    "version": "4.0.2",
+    "update": "https://packagist.org/packages/nelexa/zip",
+    "type": "lib",
+    "language": "PHP",
+    "github": "Ne-Lexa/php-zip",
+    "download": "5.5k"
+  },
+  "php-ziparchive": {
+    "name": "libzip",
+    "version": "1.10.1",
+    "update": "fixed due to vulnerability report",
+    "type": "lib",
+    "language": "C",
+    "github": "nih-at/libzip"
+  },
+  "python-zipfile": {
+    "name": "zipfile",
+    "version": "3.13.0",
+    "update": "https://hub.docker.com/_/python",
+    "type": "lib",
+    "language": "Python",
+    "std": true,
+    "link": "https://docs.python.org/3/library/zipfile.html"
+  },
+  "racket-file-unzip": {
+    "name": "file/unzip",
+    "version": "8.15",
+    "update": "https://github.com/racket/racket/releases",
+    "type": "lib",
+    "language": "Racket",
+    "std": true,
+    "link": "https://docs.racket-lang.org/file/unzip.html"
+  },
+  "ruby-rubyzip": {
+    "name": "rubyzip (File)",
+    "version": "2.3.2",
+    "update": "https://rubygems.org/gems/rubyzip",
+    "type": "lib",
+    "language": "Ruby",
+    "github": "rubyzip/rubyzip",
+    "download": "171k"
+  },
+  "ruby-rubyzip-stream": {
+    "name": "rubyzip (InputStream)",
+    "version": "2.3.2",
+    "update": "https://rubygems.org/gems/rubyzip",
+    "type": "lib",
+    "language": "Ruby",
+    "github": "rubyzip/rubyzip",
+    "download": "171k"
+  },
+  "rust-zip": {
+    "name": "zip",
+    "version": "2.2.0",
+    "update": "https://crates.io/crates/zip",
+    "type": "lib",
+    "language": "Rust",
+    "github": "zip-rs/zip-old",
+    "download": "138k"
+  },
+  "swift-zipfoundation": {
+    "name": "ZIP Foundation",
+    "version": "0.9.19",
+    "update": "https://github.com/weichsel/ZIPFoundation/releases",
+    "type": "lib",
+    "language": "Swift",
+    "github": "weichsel/ZIPFoundation"
+  },
+  "winrar": {
+    "name": "WinRAR",
+    "version": "7.01",
+    "update": "https://www.win-rar.com/download.html",
+    "type": "app",
+    "language": "C++",
+    "link": "https://www.win-rar.com/"
+  },
+  "zziplib": {
+    "name": "zziplib",
+    "version": "0.13.78",
+    "update": "https://github.com/gdraheim/zziplib/tags",
+    "type": "lib",
+    "language": "C",
+    "github": "gdraheim/zziplib"
+  }
+}

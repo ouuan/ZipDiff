@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -eu
+
+cd "$2"
+
+/zip-archive -d "$1"

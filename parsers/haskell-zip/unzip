@@ -1,0 +1,3 @@
+#!/bin/sh
+
+/haskell-zip-app uncompress "$1" "$2"

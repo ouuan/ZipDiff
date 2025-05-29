@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -eu
+
+cd /
+
+# it somehow does not accept absolute paths
+/unzipada -d "${2#/}" "${1#/}"

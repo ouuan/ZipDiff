@@ -1,0 +1,3 @@
+#!/bin/sh
+
+minizip -x -o -d "$2" "$1"

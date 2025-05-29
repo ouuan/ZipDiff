@@ -1,0 +1,6 @@
+#!/bin/sh
+
+set -eu
+
+7z t "$1"
+7z x -aoa "$1" -o"$2"

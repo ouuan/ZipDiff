@@ -1,0 +1,6 @@
+#!/bin/sh
+
+set -eu
+
+cd "$2"
+erl -noshell -eval "case zip:unzip(\"$1\") of {ok, _} -> erlang:halt(0); {error, Reason} -> io:format(\"Error: ~p~n\", [Reason]), erlang:halt(1) end." -s init stop

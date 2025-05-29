@@ -1,0 +1,6 @@
+#!/bin/sh
+
+set -eu
+
+unzip -t "$1"
+unzip -o "$1" -d "$2"
