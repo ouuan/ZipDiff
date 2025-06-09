@@ -23,7 +23,7 @@ cd parsers
 sudo docker compose build
 ```
 
-Alternatively, if you want to save some time or make sure the versions match the evaluation in the paper, you can load the images from files:
+Alternatively, if you want to save some time or make sure the versions match the evaluation in the paper, you can load the images from [files on Zenodo](https://doi.org/10.5281/zenodo.15526863):
 
 ```console
 for i in *.tar.bz2; do

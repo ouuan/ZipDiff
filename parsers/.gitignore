@@ -2,3 +2,4 @@ docker-compose.yml
 */unzip-all.sh
 */parallel-unzip-all.sh
 */testcase.sh
+!parsers.json
