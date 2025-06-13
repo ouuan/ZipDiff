@@ -7,7 +7,6 @@ mod feature;
 mod generate;
 mod mutation;
 mod rand_utils;
-mod result;
 mod stats;
 
 use binwrite::BinWrite;
@@ -31,12 +30,12 @@ pub enum Input {
 fn main() {
     let input_dir = canonicalize(&CONFIG.input_dir).expect("failed to canonicalize input dir");
     let output_dir = canonicalize(&CONFIG.output_dir).expect("failed to canonicalize output dir");
-    let parser_prepare_status = Command::new("../parsers/prepare.sh")
+    let parser_prepare_status = Command::new(CONFIG.parsers_dir.join("prepare.sh"))
         .env("INPUT_DIR", input_dir)
         .env("OUTPUT_DIR", output_dir)
         .status()
-        .expect("failed to execute parsers/prepare.sh");
-    assert!(parser_prepare_status.success(), "parsers/prepare.sh failed");
+        .expect("failed to execute prepare.sh");
+    assert!(parser_prepare_status.success(), "prepare.sh failed");
 
     let mut mutator = Mutator::new();
     let mut stats = Stats::new();

@@ -39,3 +39,11 @@ zstd = { version = "0.13.2", features = ["zstdmt"] }
 [[bin]]
 name = "fuzz"
 path = "src/fuzz/main.rs"
+
+[[bin]]
+name = "construction"
+path = "src/construction/main.rs"
+
+[[bin]]
+name = "count"
+path = "src/count/main.rs"

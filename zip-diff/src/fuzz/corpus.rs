@@ -28,7 +28,7 @@ impl Seed {
         output_large: bool,
     ) -> Self {
         let mutation_count_energy = (-(mutations.len() as f64) / 4.0).exp();
-        let size_energy = 100.0 / size as f64;
+        let size_energy = 100.0 / size.max(50) as f64;
         let ok_energy = feat.ok.count_ones(..) as f64 / feat.ok.len() as f64;
         Self {
             input,

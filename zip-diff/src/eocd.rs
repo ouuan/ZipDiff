@@ -27,7 +27,7 @@ pub struct EndOfCentralDirectoryRecord {
 }
 
 impl EndOfCentralDirectoryRecord {
-    const SIGNATURE: u32 = 0x06054b50;
+    pub const SIGNATURE: u32 = 0x06054b50;
 
     pub fn all_ff() -> Self {
         Self {
@@ -58,20 +58,29 @@ impl TryFrom<&Zip64EndOfCentralDirectoryRecord> for EndOfCentralDirectoryRecord 
     }
 }
 
-#[derive(BinWrite, Clone, Default, Educe)]
-#[educe(Debug)]
+#[derive(BinWrite, Clone, Educe)]
+#[educe(Debug, Default)]
 pub struct Zip64EndOfCentralDirectoryLocator {
     #[educe(Debug(method(std::fmt::LowerHex::fmt)))]
+    #[educe(Default = Self::SIGNATURE)]
     pub signature: u32,
     /// number of the disk with the start of the zip64 end of central directory
     pub zip64_eocdr_disk_number: u32,
     /// relative offset of the zip64 end of central directory record
     pub zip64_eocdr_offset: u64,
+    #[educe(Default = 1)]
     pub total_number_of_disks: u32,
 }
 
 impl Zip64EndOfCentralDirectoryLocator {
     pub const SIGNATURE: u32 = 0x07064b50;
+
+    pub fn from_offset(offset: u64) -> Self {
+        Self {
+            zip64_eocdr_offset: offset,
+            ..Default::default()
+        }
+    }
 }
 
 #[derive(BinWrite, Clone, Educe)]
@@ -116,7 +125,7 @@ pub struct Zip64EocdrV2 {
 }
 
 impl Zip64EndOfCentralDirectoryRecord {
-    const SIGNATURE: u32 = 0x06064b50;
+    pub const SIGNATURE: u32 = 0x06064b50;
 
     pub fn finalize(&mut self) -> Result<()> {
         for field in &mut self.extensible_data_sector {

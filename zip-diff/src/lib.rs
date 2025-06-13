@@ -4,6 +4,7 @@ pub mod dd;
 pub mod eocd;
 pub mod extra;
 pub mod fields;
+pub mod hash;
 pub mod lfh;
 pub mod utils;
 pub mod zip;

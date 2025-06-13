@@ -5,7 +5,7 @@ import requests
 import subprocess
 from typing import List, Dict
 
-with open('../parsers/parsers.json') as f:
+with open(f'{os.path.dirname(__file__)}/../parsers/parsers.json') as f:
     parser_map = json.load(f)
 
 gh_token = os.environ.get('GITHUB_TOKEN') or subprocess.check_output(['gh', 'auth', 'token']).decode()
@@ -35,7 +35,9 @@ parsers : List[Dict[str, str]] = sorted(parser_map.values(), key = lambda p : (p
 for i, parser in enumerate(parsers):
     name = parser["name"]
     std = parser.get("std", False)
-    lang = f'\\textbf{{{parser["language"]}}}' if std else parser["language"]
+    lang = parser["language"]
+    if std:
+        lang += '*'
     ver = parser['version']
     repo = parser.get('github')
     link = parser.get('link')

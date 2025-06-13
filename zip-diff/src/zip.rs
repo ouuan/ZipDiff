@@ -160,12 +160,9 @@ impl ZipArchive {
         } else {
             zip64_eocdr.finalize()?;
             self.eocdr = EndOfCentralDirectoryRecord::all_ff();
-            self.zip64_eocdl = Some(Zip64EndOfCentralDirectoryLocator {
-                signature: Zip64EndOfCentralDirectoryLocator::SIGNATURE,
-                zip64_eocdr_disk_number: 0,
-                zip64_eocdr_offset: offset as u64 + zip64_eocdr.size_of_cd,
-                total_number_of_disks: 1,
-            });
+            self.zip64_eocdl = Some(Zip64EndOfCentralDirectoryLocator::from_offset(
+                offset as u64 + zip64_eocdr.size_of_cd,
+            ));
             self.zip64_eocdr = Some(zip64_eocdr);
         }
 

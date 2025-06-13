@@ -90,7 +90,7 @@ fn collect_results(corpus: &mut Corpus, samples: Vec<Sample>) -> Vec<(Vec<UcbHan
                         if output_path.is_dir() && du(&output_path) > 1024 * 1024 {
                             // tar.zst if larger than 1 MiB
                             Some((result_path.with_extension("tar.zst"), output_path))
-                        } else if matches!(output_path.try_exists(), Ok(true)) {
+                        } else if matches!(output_path.try_exists(), Ok(false)) {
                             fs::write(&result_path, b"").expect(&format!(
                                 "failed to write error result to {}",
                                 result_path.display(),

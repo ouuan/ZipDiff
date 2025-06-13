@@ -1,14 +1,27 @@
 use blake3::{Hash, Hasher};
 use std::path::Path;
 
-pub type ParsingResult = Result<Hash, ()>;
+#[derive(Clone, Copy)]
+pub enum ParsingResult {
+    Ok(Hash),
+    Err,
+}
+
+impl ParsingResult {
+    pub fn inconsistent_with(&self, rhs: &Self) -> bool {
+        match (self, rhs) {
+            (ParsingResult::Ok(lhs), ParsingResult::Ok(rhs)) => lhs != rhs,
+            _ => false,
+        }
+    }
+}
 
 pub fn read_parsing_result(path: impl AsRef<Path>, par: bool) -> ParsingResult {
     let path = path.as_ref();
     if path.is_dir() {
-        Ok(dirhash(path, par).unwrap_or(Hash::from_bytes(Default::default())))
+        ParsingResult::Ok(dirhash(path, par).unwrap_or(Hash::from_bytes(Default::default())))
     } else {
-        Err(())
+        ParsingResult::Err
     }
 }
 
@@ -23,7 +36,7 @@ fn dirhash(path: impl AsRef<Path>, par: bool) -> Option<Hash> {
         hasher.update(
             &path
                 .read_link()
-                .expect(&format!("failed to read link {path_display}"))
+                .unwrap_or_else(|_| panic!("failed to read link {path_display}"))
                 .into_os_string()
                 .into_encoded_bytes(),
         );
@@ -34,14 +47,15 @@ fn dirhash(path: impl AsRef<Path>, par: bool) -> Option<Hash> {
         } else {
             hasher.update_mmap(path)
         }
-        .expect(&format!("failed to read file {path_display}"));
+        .unwrap_or_else(|_| panic!("failed to read file {path_display}"));
     } else if path.is_dir() {
         hasher.update(b"D");
         let mut children = path
             .read_dir()
-            .expect(&format!("failed to read dir {path_display}"))
+            .unwrap_or_else(|_| panic!("failed to read dir {path_display}"))
             .filter_map(|entry| {
-                let entry = entry.expect(&format!("failed to read dir entry in {path_display}"));
+                let entry =
+                    entry.unwrap_or_else(|_| panic!("failed to read dir entry in {path_display}"));
                 let entry_path = entry.path();
                 let mut hasher = Hasher::new();
                 let name = entry.file_name().into_encoded_bytes();

@@ -1,11 +1,14 @@
 use crate::lfh::LocalFileHeader;
 use crate::utils::binwrite_option;
 use binwrite::{BinWrite, WriterOption};
+use educe::Educe;
 use std::io::{Result, Write};
 
-#[derive(BinWrite, Clone, Default, Debug)]
+#[derive(BinWrite, Clone, Debug, Educe)]
+#[educe(Default)]
 pub struct DataDescriptor {
     #[binwrite(with(binwrite_option))]
+    #[educe(Default = Some(Self::SIGNATURE))]
     pub signature: Option<u32>,
     pub crc32: u32,
     #[binwrite(with(binwrite_u32or64))]

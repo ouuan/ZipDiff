@@ -3,12 +3,10 @@
 set -euo pipefail
 
 base="$(dirname "$(dirname "$(realpath "$0")")")"
+input_dir="${INPUT_DIR:-$base/evaluation/input}"
+output_dir="${OUTPUT_DIR:-$base/evaluation/output}"
 
-cd "$base"
-input_dir="${INPUT_DIR:-../evaluation/input}"
-output_dir="${OUTPUT_DIR:-../evaluation/output}"
-
-cd parsers
+cd "$base"/parsers
 echo "services:" > docker-compose.yml
 
 for i in */; do

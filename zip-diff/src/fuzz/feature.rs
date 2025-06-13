@@ -1,9 +1,9 @@
 use crate::config::CONFIG;
-use crate::result::read_parsing_result;
 use fixedbitset::FixedBitSet;
 use std::ops::BitOrAssign;
 use std::path::Path;
 use std::sync::LazyLock;
+use zip_diff::hash::{read_parsing_result, ParsingResult};
 
 #[derive(Clone, PartialEq, Eq, Hash)]
 pub struct Feature {
@@ -36,14 +36,12 @@ impl Feature {
 
         let mut p = 0;
         for (i, x) in results.iter().enumerate() {
-            if x.is_ok() {
+            if matches!(x, ParsingResult::Ok(_)) {
                 self.ok.insert(i);
             }
             for y in &results[..i] {
-                if let (Ok(xh), Ok(yh)) = (x, y) {
-                    if xh != yh {
-                        self.inconsistency.insert(p);
-                    }
+                if x.inconsistent_with(y) {
+                    self.inconsistency.insert(p);
                 }
                 p += 1;
             }

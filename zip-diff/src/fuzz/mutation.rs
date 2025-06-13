@@ -1001,12 +1001,9 @@ impl ZipMutate for ModifyEocdl {
     fn mutate(&self, zip: &mut ZipArchive, rng: &mut ThreadRng) -> Option<()> {
         match zip.zip64_eocdl.as_mut() {
             None => {
-                zip.zip64_eocdl = Some(Zip64EndOfCentralDirectoryLocator {
-                    signature: Zip64EndOfCentralDirectoryLocator::SIGNATURE,
-                    zip64_eocdr_disk_number: 0,
-                    zip64_eocdr_offset: zip.eocdr.offset_of_cd_wrt_starting_disk as _,
-                    total_number_of_disks: 1,
-                });
+                zip.zip64_eocdl = Some(Zip64EndOfCentralDirectoryLocator::from_offset(
+                    zip.eocdr.offset_of_cd_wrt_starting_disk.into(),
+                ));
             }
             Some(eocdl) => {
                 let (a, b, c) = rng.gen();
