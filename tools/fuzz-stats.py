@@ -4,6 +4,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
 
+# required by HotCRP
+plt.rcParams['pdf.fonttype'] = 42
+plt.rcParams['ps.fonttype'] = 42
 
 def load_stats_files():
     stats = []
@@ -136,10 +139,8 @@ def plot_metric(
 
     if timepoints[-1] == 24:
         axes[0].set_xticks(np.arange(0, 25, 4))
-    axes[0].legend(
-        loc=legend_loc,
-        reverse=True,
-    )
+    handles, labels = axes[0].get_legend_handles_labels()
+    axes[0].legend(handles[::-1], labels[::-1], loc=legend_loc)
     axes[-1].set_xlabel('Time (hours)')
 
     if break_y_axis and ax_top and ax_bottom:

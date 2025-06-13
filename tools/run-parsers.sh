@@ -14,8 +14,9 @@ for i in $(seq 1 $#); do
     cp "$testcase" "$base/evaluation/input/$i.zip"
 done
 
-cd "$base/parsers"
+pushd "$base/parsers"
 sudo docker compose up
+popd
 
 for i in $(seq 1 $#); do
     testcase="$(realpath "${!i}")"

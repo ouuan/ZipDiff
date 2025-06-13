@@ -10,8 +10,8 @@ Permanent link and Docker image files: https://doi.org/10.5281/zenodo.15526863
 
 -   Linux
 -   [Rust](https://www.rust-lang.org/tools/install) (tested on 1.86, any version is fine as long as the code compiles successfully)
--   Docker and [Docker Compose](https://docs.docker.com/compose/install/)
--   Python 3 to generate tables and figures
+-   [Docker](https://docs.docker.com/engine/install/) and [Docker Compose plugin](https://docs.docker.com/compose/install/linux/)
+-   Python 3 with `numpy` and `matplotlib` to generate tables and figures
 -   The full fuzzing process is resource-intensive, as it runs many ZIP parsers in parallel. It is recommended to have at least 128 GB of RAM and 300 GB of disk space. While it can also run on systems with fewer RAM, you may encounter significant performance degration, primarily due to uncached disk I/O, since the unzipped outputs can be quite large.
 
 The exact environment used by the authors:
@@ -19,7 +19,7 @@ The exact environment used by the authors:
 -   Ubuntu 23.10 with Linux 6.5.0-44
 -   Rust 1.86.0
 -   Docker 27.1.1 with Docker Compose 2.33.1
--   Python 3.13.3
+-   Python 3.13.3 with numpy 2.3.0 and matplotlib 3.10.3
 -   CPU: Intel(R) Xeon(R) Gold 6330 CPU @ 2.00GHz with 112 logical CPUs
 -   Memory and storage: 944G RAM + 44T disk (less than 1T was used)
 
@@ -74,7 +74,7 @@ You can test if parsers are working by testing them on a ZIP file: (assuming tha
 ```console
 pushd /tmp
 echo test > test.txt
-zip test.zip test.txt
+zip -0 test.zip test.txt
 popd
 tools/run-parsers.sh /tmp/test.zip
 ```
@@ -114,10 +114,10 @@ target/release/fuzz --help
 
 ## Reproducing the ablation study
 
-1.  Run `tools/ablation-study.sh`. It will run five 24-hour fuzzing sessions, for a total of 15 days.
+1.  Run `sudo tools/ablation-study.sh`. It will run five 24-hour fuzzing sessions, for a total of 15 days.
 2.  Run `python3 tools/fuzz-stats.py evaluation/stats/*` to draw the graph at `inconsistent-pair-cdf.pdf`.
 
-The full results took around 100GB of disk space for the authors. At runtime it may temporarily take another ~200GB of disk space. You can lower the `$BATCH_SIZE` in `ablation-study.sh` to reduce the required amount of RAM and disk space.
+The full results took around 100GB of disk space for the authors. At runtime it may temporarily take another ~500GB of disk space. You can lower the `$BATCH_SIZE` in `ablation-study.sh` to reduce the required amount of RAM and disk space.
 
 ## Testing the constructed ambiguous ZIP files
 
