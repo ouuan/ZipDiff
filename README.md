@@ -114,7 +114,7 @@ target/release/fuzz --help
 
 ## Reproducing the ablation study
 
-1.  Run `sudo tools/ablation-study.sh`. It will run five 24-hour fuzzing sessions, for a total of 15 days.
+1.  Run `sudo tools/ablation-study.sh`. It will run five 24-hour fuzzing sessions for each of the three setups, for a total of 15 days.
 2.  Run `python3 tools/fuzz-stats.py evaluation/stats/*` to draw the graph at `inconsistent-pair-cdf.pdf`.
 
 The full results took around 100GB of disk space for the authors. At runtime it may temporarily take another ~500GB of disk space. You can lower the `$BATCH_SIZE` in `ablation-study.sh` to reduce the required amount of RAM and disk space.
