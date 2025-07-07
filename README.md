@@ -97,14 +97,14 @@ You can verify that all parsers successfully extracted `test.txt` from the ZIP a
 
 ```console
 cd zip-diff
-# clear samples and results from previous evaluations
-sudo rm -rf ../evaluation
 sudo target/release/fuzz
 ```
 
 Here root permission is required because the outputs are written inside Docker and are owned by root. Sometimes the outputs have incorrect permission bits and cannot be read by regular users even if the user is the file owner.
 
 By default, the results are stored at `evaluation/stats.json`, `evaluation/samples`, and `evaluation/results`.
+
+The fuzzer does not automatically clear data from previous execution and the files might be mixed together. You should either remove the files left from previous execution if they are not needed, or specify different `--samples-dir`, `--results-dir`, and `--stats-file` locations.
 
 You can use command-line options to set output locations and other parameters:
 
