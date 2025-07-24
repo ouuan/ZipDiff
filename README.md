@@ -2,7 +2,7 @@
 
 A differential fuzzer for ZIP parsers.
 
-This is the source code for the USENIX Security '25 paper *My ZIP isn’t your ZIP: Identifying and Exploiting Semantic Gaps Between ZIP Parsers*.
+This is the source code for the USENIX Security '25 paper [My ZIP isn’t your ZIP: Identifying and Exploiting Semantic Gaps Between ZIP Parsers](https://www.usenix.org/conference/usenixsecurity25/presentation/you).
 
 Permanent link and Docker image files: https://doi.org/10.5281/zenodo.15526863
 
