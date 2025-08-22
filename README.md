@@ -4,7 +4,13 @@ A differential fuzzer for ZIP parsers.
 
 This is the source code for the USENIX Security '25 paper [My ZIP isn’t your ZIP: Identifying and Exploiting Semantic Gaps Between ZIP Parsers](https://www.usenix.org/conference/usenixsecurity25/presentation/you).
 
-Permanent link and Docker image files: https://doi.org/10.5281/zenodo.15526863
+Zotero permanent link and Docker image files: https://doi.org/10.5281/zenodo.15526863
+
+This artifact has received the Results Reproduced badge: [Artifact appendix](https://secartifacts.github.io/usenixsec2025/appendix-files/sec25cycle2ae-final28.pdf)
+
+<img alt="Artifacts Available badge"  src="https://secartifacts.github.io/images/usenixbadges-available.png"  width=100 align=left>
+<img alt="Artifacts Functional badge" src="https://secartifacts.github.io/images/usenixbadges-functional.png" width=100 align=left>
+<img alt="Results Reproduced badge"   src="https://secartifacts.github.io/images/usenixbadges-reproduced.png" width=100>
 
 ## Environment
 

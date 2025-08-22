@@ -1,0 +1,63 @@
+cff-version: 1.2.0
+title: ZipDiff
+type: software
+authors:
+  - given-names: Yufan
+    family-names: You
+    email: ouuansteve@gmail.com
+    affiliation: Tsinghua University
+    orcid: 'https://orcid.org/0009-0004-2975-2107'
+  - given-names: Jianjun
+    family-names: Chen
+    email: jianjun@tsinghua.edu.cn
+    affiliation: Tsinghua University
+    orcid: 'https://orcid.org/0000-0001-7511-1117'
+  - given-names: Qi
+    family-names: Wang
+    affiliation: Tsinghua University
+    orcid: 'https://orcid.org/0009-0008-5707-3223'
+  - given-names: Haixin
+    family-names: Duan
+    affiliation: Tsinghua University
+    orcid: 'https://orcid.org/0000-0003-0083-733X'
+doi: 10.5281/zenodo.15526863
+repository-code: 'https://github.com/ouuan/ZipDiff'
+repository-artifact: 'https://doi.org/10.5281/zenodo.15526863'
+abstract: A differential fuzzer for ZIP parsers.
+keywords:
+  - differential fuzzer
+  - zip
+license: Apache-2.0
+preferred-citation:
+  type: conference-paper
+  authors:
+  - given-names: Yufan
+    family-names: You
+    email: ouuansteve@gmail.com
+    affiliation: Tsinghua University
+    orcid: 'https://orcid.org/0009-0004-2975-2107'
+  - given-names: Jianjun
+    family-names: Chen
+    email: jianjun@tsinghua.edu.cn
+    affiliation: Tsinghua University
+    orcid: 'https://orcid.org/0000-0001-7511-1117'
+  - given-names: Qi
+    family-names: Wang
+    affiliation: Tsinghua University
+    orcid: 'https://orcid.org/0009-0008-5707-3223'
+  - given-names: Haixin
+    family-names: Duan
+    affiliation: Tsinghua University
+    orcid: 'https://orcid.org/0000-0003-0083-733X'
+  year: 2025
+  month: 8
+  title: "My ZIP isn't your ZIP: Identifying and Exploiting Semantic Gaps Between ZIP Parsers"
+  conference:
+    name: "34th USENIX Security Symposium"
+    location: "Seattle, WA"
+    date-start: 2025-08-13
+    date-end: 2025-08-15
+    publisher:
+      name: "USENIX Association"
+  isbn: "978-1-939133-52-6"
+  url: "https://www.usenix.org/conference/usenixsecurity25/presentation/you"
